@@ -2,9 +2,17 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="하이눈정보통신은 정보통신공사, CCTV, 네트워크, IP방송과 통신시설 유지보수를 수행합니다. 부산에 기반을 둔 정보통신 전문기업을 소개합니다.">
   <meta name="theme-color" content="#f4f8fb">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="icon" href="assets/app-icon-192.png" type="image/png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="하이눈ICT">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="stylesheet" href="app.css">
+  <script src="app.js" defer></script>
   <title>하이눈정보통신 | 정보통신공사 · 네트워크 · CCTV</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -31,6 +39,8 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.97);backdro
 </head>
 <body>
   <a href="#main" class="skip">본문으로 바로가기</a>
+  <div id="offline-status" class="app-status" role="status" hidden>오프라인입니다. 저장된 회사소개를 보고 있습니다. 외부 링크와 문의는 인터넷 연결이 필요할 수 있습니다.</div>
+  <div id="app-update" class="app-update" role="status" hidden><span>새로운 회사소개가 준비되었습니다.</span><button id="apply-app-update" type="button">새 버전 보기</button></div>
   <header><div class="wrap nav-shell">
     <a class="brand" href="#main" aria-label="하이눈정보통신 홈"><span class="brand-symbol" aria-hidden="true">H</span><span><span class="brand-name">하이눈정보통신</span><span class="brand-sub">HIGHNOON INFORMATION & COMMUNICATION</span></span></a>
     <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navigation"><iconify-icon icon="solar:hamburger-menu-linear" aria-hidden="true"></iconify-icon></button>
@@ -78,8 +88,16 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.97);backdro
       <div class="contact-copy reveal"><div class="eyebrow">CONTACT US</div><h2>다음 연결을<br>함께 준비하겠습니다.</h2><p>통신시설 구축과 설비 유지보수,<br>현장에 필요한 업무를 상담해보세요.</p><a class="btn" href="mailto:highnoon0377@naver.com">이메일로 문의하기</a></div>
       <div class="contact-list reveal"><a href="tel:0518660377"><iconify-icon icon="solar:phone-linear" aria-hidden="true"></iconify-icon><span><small>대표전화</small><strong>051-866-0377</strong></span></a><a href="mailto:highnoon0377@naver.com"><iconify-icon icon="solar:letter-linear" aria-hidden="true"></iconify-icon><span><small>이메일</small><strong>highnoon0377@naver.com</strong></span></a><div class="address"><iconify-icon icon="solar:map-point-linear" aria-hidden="true"></iconify-icon><span><small>주소</small><strong>부산광역시 연제구<br>거제대로252번길 32</strong></span></div><p class="quiet-note">FAX 051-865-0671 · 연락처는 제공 지명원 기준입니다.</p></div>
     </div></section>
+    <section id="app" class="section app-section"><div class="wrap">
+      <div class="app-heading"><div><div class="eyebrow">HIGHNOON, EVERYWHERE</div><h2>웹에서도, 휴대폰에서도.<br>하이눈을 더 가까이.</h2><p>회사소개와 현장사진을 언제든 확인하세요. 홈 화면에 추가하면 하이눈정보통신을 앱처럼 간편하게 열 수 있습니다.</p></div><button class="btn app-install-btn" type="button" data-install-app>앱 설치 안내</button></div>
+      <div class="install-grid">
+        <article class="install-card"><span>ANDROID</span><h3>안드로이드</h3><p>Chrome으로 홈페이지를 열고 메뉴의 ‘앱 설치’ 또는 ‘홈 화면에 추가’를 선택하세요. 설치 버튼이 표시되면 바로 설치할 수 있습니다.</p></article>
+        <article class="install-card"><span>IPHONE · IPAD</span><h3>아이폰 · 아이패드</h3><p>Safari에서 공유 버튼을 누르고 ‘홈 화면에 추가’를 선택하세요. ‘웹 앱으로 열기’가 표시되면 켠 상태로 추가하세요.</p></article>
+        <article class="install-card"><span>DESKTOP</span><h3>PC에서도 앱으로</h3><p>Chrome 또는 Edge에서 주소창의 설치 아이콘이나 브라우저 메뉴의 앱 설치를 선택하세요. 별도 창에서 편리하게 이용할 수 있습니다.</p></article>
+      </div><p class="app-footnote"><span id="offline-storage" role="status">처음 인터넷에 연결해 방문하면 회사소개와 주요 사진을 저장합니다.</span><br>저장한 회사소개는 오프라인에서도 볼 수 있습니다. 설치 메뉴의 이름과 위치는 브라우저에 따라 다를 수 있습니다.</p>
+    </div></section>
   </main>
-  <footer><div class="wrap footer-row"><div><strong>하이눈정보통신</strong><p>대표 방호영 · 사업자등록번호 607-51-78688<br>© 2026 HIGHNOON INFORMATION & COMMUNICATION. All rights reserved.</p></div><div class="footer-links"><a href="#about">회사소개</a><a href="#business">사업분야</a><a href="#contact">문의하기</a><a href="https://corp.kt.com/html/intro/main.html" target="_blank" rel="noopener noreferrer">KT 공식 홈페이지</a></div></div></footer>
+  <footer><div class="wrap footer-row"><div><strong>하이눈정보통신</strong><p>대표 방호영 · 사업자등록번호 607-51-78688<br>© 2026 HIGHNOON INFORMATION & COMMUNICATION. All rights reserved.</p></div><div class="footer-links"><a href="#about">회사소개</a><a href="#business">사업분야</a><a href="#contact">문의하기</a><a href="#app">앱 설치 안내</a><a href="https://corp.kt.com/html/intro/main.html" target="_blank" rel="noopener noreferrer">KT 공식 홈페이지</a></div></div></footer>
   <script>
     const toggle=document.querySelector('.menu-toggle');
     const nav=document.querySelector('#navigation');
@@ -89,5 +107,12 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.97);backdro
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&nav.classList.contains('open')){closeMenu();toggle.focus();}});
     if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('motion-ready');const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}
   </script>
+  <nav class="mobile-app-nav" aria-label="모바일 빠른 메뉴">
+    <a href="#main"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3zM9 20v-7h6v7"/></svg><span>홈</span></a>
+    <a href="#business"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 12h18M10 12v3h4v-3"/></svg><span>사업분야</span></a>
+    <a href="tel:0518660377"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4c0 2-2 3-4 2C9 19 5 15 3 7c-1-2 0-4 2-4Z"/></svg><span>전화 문의</span></a>
+    <button type="button" data-install-app><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg><span>앱 설치</span></button>
+  </nav>
+  <dialog id="app-install-dialog" class="install-dialog" aria-labelledby="install-title"><div class="install-dialog-top"><h2 id="install-title">하이눈정보통신 앱 설치</h2><button id="close-install-dialog" class="close-dialog" type="button" aria-label="설치 안내 닫기">×</button></div><p>홈 화면 아이콘으로 회사소개와 현장사진을 바로 열어보세요.</p><button id="native-install" class="btn app-install-btn" type="button" hidden>지금 설치하기</button><ol><li><strong>안드로이드:</strong> Chrome 메뉴 → ‘앱 설치’ 또는 ‘홈 화면에 추가’</li><li><strong>아이폰·아이패드:</strong> Safari 공유 → ‘홈 화면에 추가’ → ‘추가’. ‘웹 앱으로 열기’가 보이면 켜세요.</li><li><strong>PC:</strong> Chrome·Edge 주소창의 설치 아이콘 또는 브라우저 메뉴 → 앱 설치</li></ol><p id="install-feedback" role="status" aria-live="polite"></p><p>설치 메뉴가 보이지 않으면 기본 브라우저로 홈페이지를 열어주세요. 웹에서도 같은 내용을 이용할 수 있습니다.</p></dialog>
 </body>
 </html>
