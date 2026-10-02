@@ -43,6 +43,14 @@ KT 기업소개: https://corp.kt.com/html/intro/main.html
 
 설치 안내 기준: [MDN](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable), [Apple](https://support.apple.com/guide/iphone/iphea86e5236/ios).
 
+## 비윤리 신고 안내
+
+[비윤리 신고 페이지](./ethics.html)를 홈페이지 상단 메뉴와 하단 안내, 앱 바로가기에 연결했습니다.
+신고·보상 안내 / 신고하기 / 처리결과 확인 탭을 PC·모바일에서 이용할 수 있습니다.
+전용 신고 접수처와 보상 정책은 제공되지 않아 확정된 회사 제도로 게시하지 않았습니다. 대표전화·이메일은 접수 담당창구 문의용이며, 신고 양식 다운로드는 접수 기능이 아닙니다.
+신고 수집, 익명 접수, 접수번호 발급 및 온라인 결과조회 서버는 연결하지 않았습니다. 처리결과는 접수 담당자에게 문의하도록 안내합니다.
+운영 시 회사가 확정한 전용 접수처, 정보 취급·보호 기준, 보상제도 및 처리 절차를 반영하세요. 비윤리 신고 안내와 양식은 앱 오프라인 캐시에 포함됩니다.
+
 ## 관련 링크
 
 - [국가직무능력표준](https://www.ncs.go.kr/index.do)

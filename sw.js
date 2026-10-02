@@ -1,10 +1,11 @@
 'use strict';
 // Bump this version whenever a release changes the offline app shell.
 const CACHE_PREFIX = 'highnoon-ict-';
-const CACHE_NAME = CACHE_PREFIX + '20261002-pwa-v2';
+const CACHE_NAME = CACHE_PREFIX + '20261002-pwa-v3';
 const ROOT = new URL('./', self.location.href);
 const INDEX = new URL('index.html', ROOT).href;
-const SHELL = ['index.html', 'manifest.webmanifest', 'app.js', 'app.css',
+const PAGE_URLS = new Set([INDEX, new URL('ethics.html', ROOT).href]);
+const SHELL = ['index.html', 'ethics.html', 'ethics.css', 'ethics.js', 'assets/ethics-report-template.txt', 'manifest.webmanifest', 'app.js', 'app.css',
   'assets/app-icon-192.png', 'assets/app-icon-512.png', 'assets/apple-touch-icon.png',
   'assets/telecom-tower-sunset.png', 'assets/network-maintenance.jpg',
   'assets/field-safety-meeting.png'].map(path => new URL(path, ROOT).href);
@@ -29,13 +30,15 @@ self.addEventListener('fetch', event => {
     event.respondWith((async () => {
       try {
         const response = await fetch(request);
-        if (response.ok && (url.pathname === ROOT.pathname || url.pathname === new URL(INDEX).pathname)) {
+        const pageURL = url.pathname === ROOT.pathname ? INDEX : new URL(url.pathname, ROOT.origin).href;
+        if (response.ok && PAGE_URLS.has(pageURL)) {
           const cache = await caches.open(CACHE_NAME);
-          await cache.put(INDEX, response.clone());
+          await cache.put(pageURL, response.clone());
         }
         return response;
       } catch (error) {
-        return (await caches.match(INDEX)) || Response.error();
+        const pageURL = new URL(url.pathname, ROOT.origin).href;
+        return (await caches.match(PAGE_URLS.has(pageURL) ? pageURL : INDEX)) || Response.error();
       }
     })());
     return;

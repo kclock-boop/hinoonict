@@ -16,6 +16,7 @@
   "shortcuts": [
     {"name": "사업분야", "url": "./#business"},
     {"name": "현장사진", "url": "./#fieldwork"},
-    {"name": "사업 문의", "url": "./#contact"}
+    {"name": "사업 문의", "url": "./#contact"},
+    {"name": "비윤리 신고", "url": "./ethics.html"}
   ]
 }
