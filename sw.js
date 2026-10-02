@@ -1,7 +1,7 @@
 'use strict';
 // Bump this version whenever a release changes the offline app shell.
 const CACHE_PREFIX = 'highnoon-ict-';
-const CACHE_NAME = CACHE_PREFIX + '20261002-pwa-v3';
+const CACHE_NAME = CACHE_PREFIX + '20261002-pwa-v6';
 const ROOT = new URL('./', self.location.href);
 const INDEX = new URL('index.html', ROOT).href;
 const PAGE_URLS = new Set([INDEX, new URL('ethics.html', ROOT).href]);
