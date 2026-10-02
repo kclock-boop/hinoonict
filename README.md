@@ -1,3 +1,7 @@
+## 홈페이지 바로가기
+
+[하이눈정보통신 홈페이지 열기](https://kclock-boop.github.io/hinoonict/)
+
 # hinoonict
 * [국가직무능력](https://www.ncs.go.kr/index.do)
 
