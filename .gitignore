@@ -1,0 +1,6 @@
+tmp/
+*.pdf
+.env
+.env.*
+.sites-runtime/
+node_modules/
