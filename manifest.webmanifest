@@ -14,7 +14,7 @@
     {"src": "assets/app-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
   ],
   "shortcuts": [
-    {"name": "사업분야", "url": "./#business"},
+    {"name": "장애발생 보고서", "url": "./incident.html"},
     {"name": "현장사진", "url": "./#fieldwork"},
     {"name": "사업 문의", "url": "./#contact"},
     {"name": "비윤리 신고", "url": "./ethics.html"}
