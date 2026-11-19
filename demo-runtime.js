@@ -12,7 +12,7 @@
  ].map(([id,category,stage,end,address])=>({id:'demo-project-'+id,name:'DEMO-HN-'+id,category,stage,start:date(-5),end:date(end),completedAt:stage==='completed'?date(0):'',address:address+' (실제 주소 아님)',assignee:'',client:'',notes:stage==='postponed'?'예시: 작업 협의로 임시 연기. 기존 마감일 유지.':'시연용 예시 공사입니다.',createdAt:new Date().toISOString(),updatedAt:new Date().toISOString()}));}
  window.HighnoonDemo={active:true,constructionKey,examples,day};
  try{if(sessionStorage.getItem('highnoon-demo-day')!==day()){sessionStorage.removeItem(constructionKey);sessionStorage.setItem('highnoon-demo-day',day());}}catch{}
- const style=document.createElement('link');style.rel='stylesheet';style.href='demo-runtime.css?v=20261119-13';document.head.append(style);
+ const style=document.createElement('link');style.rel='stylesheet';style.href='demo-runtime.css?v=20261119-14';document.head.append(style);
  function demoLink(href){const url=new URL(href,location.href);if(url.origin!==location.origin||!['http:','https:','file:'].includes(url.protocol))return null;if(url.pathname.endsWith('/demo.html'))return null;url.searchParams.set('demo','1');if(!url.searchParams.has('demo_alert')&&params.get('demo_alert'))url.searchParams.set('demo_alert',params.get('demo_alert'));return url.href;}
  document.addEventListener('click',event=>{
   if(event.target.closest('#native-install')){event.preventDefault();event.stopImmediatePropagation();const toast=document.querySelector('#demo-toast');if(toast){toast.hidden=false;toast.textContent='시연에서는 설치 안내만 제공합니다. 실제 앱 설치는 실제 홈페이지에서 진행하세요.';}return;}
