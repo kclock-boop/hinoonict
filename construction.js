@@ -31,7 +31,7 @@
  document.querySelector('#import-projects').addEventListener('click',()=>document.querySelector('#import-file').click());document.querySelector('#import-file').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;try{if(file.size>2*1024*1024)throw Error('2MB 이하의 백업 파일을 선택해 주세요.');const data=JSON.parse(await file.text());if(data.schema!==1)throw Error('지원하지 않는 백업 형식입니다.');S.check(data.items);if(!confirm('현재 브라우저의 공사 목록을 백업 '+data.items.length+'건으로 바꿀까요? 기존 목록은 백업 저장 후 진행해 주세요.'))return;items=await S.replace(data.items);render();notify('백업 파일에서 공사 '+items.length+'건을 불러왔습니다.');}catch(error){notify('불러오지 못했습니다. '+(error instanceof SyntaxError?'JSON 백업 파일을 확인해 주세요.':error.message),true);}finally{event.target.value='';}});
  document.querySelector('#print-projects').addEventListener('click',()=>window.print());
  window.addEventListener('storage',()=>refresh());document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});setInterval(()=>{if(!document.hidden&&!dialog.open)render();},60000);
- window.addEventListener('beforeunload',event=>{if(dirty&&dialog.open){event.preventDefault();event.returnValue='';}});
+ window.addEventListener('beforeunload',event=>{if(dirty&&dialog.open&&!window.HighnoonDemo?.active){event.preventDefault();event.returnValue='';}});
  document.querySelector('#save-project').disabled=false;refresh();
  if('serviceWorker' in navigator&&window.isSecureContext)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'}).catch(()=>{}));
 })();
