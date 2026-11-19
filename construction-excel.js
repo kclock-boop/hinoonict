@@ -33,7 +33,7 @@
     formula=formula||Object.values(cells).some(c=>!!c?.f);
     for(const cell of Object.values(cells))if(cell?.f&&(cell.v===undefined||cell.v===null||cell.v===''))throw Error('수식 결과가 저장되지 않았습니다. Excel에서 계산 후 저장해 주세요.');
     const name=text(cells.name);if(!name)throw Error('공사번호가 비어 있습니다.');
-    let category=text(cells.category);if(!category){category=C.categories.find(c=>c!=='기타'&&c!=='광'&&name.includes(c))||'기타';row.warnings.push('공사 구분 추정: '+category);}
+    let category=C.normalizeCategory(text(cells.category));if(!category){category=C.categories.find(c=>c!=='기타'&&c!=='광'&&name.includes(c))||'기타';row.warnings.push('공사 구분 추정: '+category);}
     if(!C.categories.includes(category))throw Error('지원하지 않는 공사 구분: '+category);
     const start=date(cells.start,date1904),end=date(cells.end,date1904),completedAt=date(cells.completedAt,date1904,true),rawStage=text(cells.stage),stageText=norm(rawStage);let stage='ordered';
     if(completedAt)stage='completed';

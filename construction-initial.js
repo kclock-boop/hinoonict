@@ -71,7 +71,7 @@ window.HighnoonConstructionInitial={
     {
       "id": "2b0aec61-eff1-4472-bc38-f7690413d347",
       "name": "전용-2026-0002",
-      "category": "전용",
+      "category": "광",
       "stage": "ordered",
       "start": "2026-11-09",
       "end": "2026-11-20",
@@ -84,7 +84,7 @@ window.HighnoonConstructionInitial={
     {
       "id": "624e0776-6c34-4c65-a884-874b2b8b7e82",
       "name": "전용-2026-0003",
-      "category": "전용",
+      "category": "광",
       "stage": "ordered",
       "start": "2026-11-09",
       "end": "2026-11-19",
