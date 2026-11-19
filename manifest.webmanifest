@@ -15,7 +15,7 @@
   ],
   "shortcuts": [
     {"name": "장애발생 보고서", "url": "./incident.html"},
-    {"name": "현장사진", "url": "./#fieldwork"},
+    {"name": "중요공사기간관리", "url": "./construction.html"},
     {"name": "사업 문의", "url": "./#contact"},
     {"name": "비윤리 신고", "url": "./ethics.html"}
   ]
