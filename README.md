@@ -74,6 +74,12 @@ KT 기업소개: https://corp.kt.com/html/intro/main.html
 construction-core.js는 날짜·표시 판정, construction-store.js는 list/upsert/remove/replace 저장소 경계, construction.js는 화면 동작을 담당합니다. 추후 Netlify·Supabase 연동 시 저장소 경계를 교체하고 사내 사용자 인증과 행별 접근 정책을 먼저 적용해야 합니다. 이 버전에는 원격 DB 주소·키·마이그레이션을 포함하지 않습니다.
 기존 GitHub Pages는 계속 사용 가능하며 새 관리 화면과 관련 파일은 앱 오프라인 캐시에 포함됩니다. Netlify로 주소가 바뀌면 브라우저 저장 데이터가 자동 이전되지 않으므로 백업 후 불러오기를 사용하세요.
 
+
+### 중요공사기간관리 1차 보완
+
+등록창의 공사명을 공사번호로 변경하고 담당자·발주처 입력란을 작업장 주소(한 줄 전체 폭)로 교체했습니다. 공사번호와 주소를 진행 보드·목록·검색·인쇄·백업에 반영합니다.
+기존 로컬 저장 및 schema 1 백업을 계속 읽습니다. 호환성을 위해 기존 name 키를 공사번호 입력에 사용하며, 이전에 저장한 값은 자동 삭제하거나 바꾸지 않습니다. address 키를 추가하고, 기존 assignee/client 값은 화면에서 입력받지 않지만 수정·백업 시 보존합니다.
+
 ## 관련 링크
 
 - [국가직무능력표준](https://www.ncs.go.kr/index.do)

@@ -16,12 +16,13 @@
  }
  function validate(item){
   if(!item||typeof item!=='object')return '공사 정보를 확인해 주세요.';
-  if(typeof item.name!=='string'||!item.name.trim()||item.name.length>150)return '공사명을 150자 이내로 입력해 주세요.';
+  if(typeof item.name!=='string'||!item.name.trim()||item.name.length>150)return '공사번호를 150자 이내로 입력해 주세요.';
   if(!categories.includes(item.category)||!Object.hasOwn(stages,item.stage))return '공사 구분과 상태를 선택해 주세요.';
   if(!Number.isFinite(dateNumber(item.start))||!Number.isFinite(dateNumber(item.end)))return '시작일과 마감일을 확인해 주세요.';
   if(days(item.start,item.end)<0)return '마감일은 시작일보다 빠를 수 없습니다.';
   if(item.stage==='completed'&&(!Number.isFinite(dateNumber(item.completedAt))||days(item.start,item.completedAt)<0))return '완료일을 입력해 주세요. 시작일보다 빠를 수 없습니다.';
   for(const [key,max] of [['assignee',80],['client',150],['notes',3000]])if(typeof item[key]!=='string'||item[key].length>max)return '담당자·발주처·메모의 입력 길이를 확인해 주세요.';
+  if(item.address!==undefined&&(typeof item.address!=='string'||item.address.length>300))return '작업장 주소를 300자 이내로 입력해 주세요.';
   return '';
  }
  const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
