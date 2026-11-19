@@ -1,0 +1,14 @@
+.company-brand{display:inline-flex;align-items:center;gap:15px;flex-shrink:0;min-width:0;color:#353064;text-decoration:none;line-height:1.25}
+.company-brand-mark{display:block;width:88px;height:auto;flex-shrink:0;object-fit:contain}
+.company-brand-text{display:flex;flex-direction:column;gap:7px;min-width:0}
+.company-brand-name{display:block;font-family:Pretendard,system-ui,-apple-system,'Malgun Gothic',sans-serif;font-size:34px;font-weight:850;line-height:1.2;letter-spacing:-1.2px;white-space:nowrap;color:#39346e}
+.company-brand-en{display:block;font-family:Pretendard,system-ui,sans-serif;font-size:10px;font-weight:650;line-height:1.35;letter-spacing:1.2px;white-space:nowrap;color:#6b6392}
+.company-brand-en-short{display:none}
+.company-brand--compact .company-brand-mark{width:76px}
+.company-brand--compact .company-brand-name{font-size:31px}
+.company-brand--compact .company-brand-en{font-size:9px;letter-spacing:1px}
+header .nav-shell{padding-top:22px;padding-bottom:22px}
+@media(max-width:1250px){.company-brand{gap:12px}.company-brand-mark{width:75px}.company-brand-name{font-size:30px}.company-brand-en-full{display:none}.company-brand-en-short{display:inline}.company-brand-en{font-size:10px;letter-spacing:2.1px}.company-brand--compact .company-brand-en{letter-spacing:1.8px}}
+@media(max-width:1100px){header .nav-shell{position:relative}header .menu-toggle{display:grid;place-items:center}header .nav-links{display:none;position:absolute;top:calc(100% + 3px);left:0;right:0;background:white;padding:16px;border:1px solid #dce6ed;border-radius:9px;box-shadow:0 15px 35px rgba(21,40,60,.08)}header .nav-links.open{display:flex;flex-direction:column;align-items:stretch;gap:4px}header .nav-links a{padding:12px;font-size:15px}header .nav-contact{text-align:center}}
+@media(max-width:767px){.company-brand{gap:10px}.company-brand-mark{width:60px}.company-brand-text{gap:5px}.company-brand-name{font-size:25px;letter-spacing:-.8px;font-weight:850}.company-brand-en{font-size:9px;letter-spacing:1.6px}.company-brand--compact .company-brand-mark{width:49px}.company-brand--compact .company-brand-name{font-size:22px}.company-brand--compact .company-brand-en{font-size:8px;letter-spacing:1.5px}header .nav-shell{padding-top:17px;padding-bottom:17px}}
+@media(max-width:360px){.company-brand-mark{width:51px}.company-brand-name{font-size:22px}.company-brand{gap:8px}.company-brand--compact .company-brand-mark{width:44px}.company-brand--compact .company-brand-name{font-size:20px}.header-links{gap:9px}}
