@@ -21,7 +21,6 @@
    setStatus('알림 기준일 '+day+' (한국) · 마감 1일 전 '+items.length+'건 · 당일 '+today+'건 · 2일 전 '+twoDays+'건. 팝업은 1일 전 공사만 표시합니다.');
    if(!items.length){pending=false;if(dialog.open)dialog.close();return;}
    if(dismissed&&!dialog.open)return;
-   if(window.HighnoonDemo?.active&&new URLSearchParams(location.search).get('demo_alert')==='off'&&!force&&!dialog.open)return;
    document.querySelector('#deadline-alert-count').textContent='마감 1일 전 공사 '+items.length+'건';
    document.querySelector('#deadline-alert-list').innerHTML=items.map(item=>'<li class="deadline-alert-item"><div class="deadline-alert-item-top"><span>'+E(item.category)+' · '+E(C.stages[item.stage])+'</span><span class="deadline-alert-due">D-1 · 내일 마감</span></div><h3>공사번호 '+E(item.name)+'</h3><p>공사기간: '+E(item.start)+' ~ '+E(item.end)+'</p><p>작업장 주소: '+E(item.address||'미기재')+'</p></li>').join('');
    if(dialog.open)return;
