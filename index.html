@@ -43,6 +43,8 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.97);backdro
   <script src="construction-core.js" defer></script>
   <script src="construction-store.js" defer></script>
   <script src="construction.js" defer></script>
+  <link rel="stylesheet" href="deadline-alert.css">
+  <script src="deadline-alert.js" defer></script>
 </head>
 <body>
   <a href="#main" class="skip">본문으로 바로가기</a>
@@ -125,5 +127,6 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.97);backdro
     <button type="button" data-install-app><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg><span>앱 설치</span></button>
   </nav>
   <dialog id="app-install-dialog" class="install-dialog" aria-labelledby="install-title"><div class="install-dialog-top"><h2 id="install-title">하이눈정보통신 앱 설치</h2><button id="close-install-dialog" class="close-dialog" type="button" aria-label="설치 안내 닫기">×</button></div><p>홈 화면 아이콘으로 회사소개와 현장사진을 바로 열어보세요.</p><button id="native-install" class="btn app-install-btn" type="button" hidden>지금 설치하기</button><ol><li><strong>안드로이드:</strong> Chrome 메뉴 → ‘앱 설치’ 또는 ‘홈 화면에 추가’</li><li><strong>아이폰·아이패드:</strong> Safari 공유 → ‘홈 화면에 추가’ → ‘추가’. ‘웹 앱으로 열기’가 보이면 켜세요.</li><li><strong>PC:</strong> Chrome·Edge 주소창의 설치 아이콘 또는 브라우저 메뉴 → 앱 설치</li></ol><p id="install-feedback" role="status" aria-live="polite"></p><p>설치 메뉴가 보이지 않으면 기본 브라우저로 홈페이지를 열어주세요. 웹에서도 같은 내용을 이용할 수 있습니다.</p></dialog>
+  <dialog id="deadline-alert" class="deadline-alert" aria-labelledby="deadline-alert-title" aria-describedby="deadline-alert-description"><div class="deadline-alert-top"><div><div class="deadline-alert-label"><span class="deadline-alert-dot" aria-hidden="true"></span>마감 임박 · D-1</div><h2 id="deadline-alert-title">내일 마감되는 공사가 있습니다.</h2><p id="deadline-alert-count"></p></div><button type="button" id="close-deadline-alert" class="deadline-alert-close" aria-label="마감 알림 닫기" autofocus>×</button></div><div class="deadline-alert-body"><ul id="deadline-alert-list" class="deadline-alert-list" aria-label="마감 하루 전 공사 목록"></ul><p id="deadline-alert-description" class="deadline-alert-note">한국 날짜 기준, 현재 브라우저에 저장된 미완료 공사 중 마감이 하루 남은 공사를 표시합니다. 작업 완료와 일정 변경 여부를 확인해 주세요.</p><div class="deadline-alert-actions"><button type="button" id="acknowledge-deadline-alert">확인하고 닫기</button><a href="construction.html">공사기간 관리하기 →</a></div></div></dialog>
 </body>
 </html>
