@@ -1,16 +1,16 @@
-.deadline-alert{width:min(620px,calc(100% - 28px));max-height:calc(100dvh - 36px);padding:0;border:2px solid #ce6a5d;border-radius:15px;background:#fff;color:#203b4c;overflow:auto;animation:deadline-border-pulse 2.4s ease-in-out infinite;box-shadow:0 0 0 5px rgba(204,89,75,.08)}
+.deadline-alert{width:min(620px,calc(100% - 28px));max-height:calc(100dvh - 36px);padding:0;border:2px solid #e02020;border-radius:15px;background:#fff;color:#203b4c;overflow:auto;animation:deadline-border-pulse 2.4s ease-in-out infinite;box-shadow:0 0 0 5px rgba(224,32,32,.12)}
 .deadline-alert::backdrop{background:rgba(21,44,62,.44)}
 .deadline-alert-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:25px 27px 19px;background:#fff6f2;border-bottom:1px solid #f0d7cf}
-.deadline-alert-label{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:#b2483c;letter-spacing:1px}
-.deadline-alert-dot{display:inline-block;width:10px;height:10px;flex-shrink:0;border-radius:50%;background:#c65143;animation:deadline-dot-pulse 2.4s ease-in-out infinite}
-.deadline-alert h2{font-size:27px!important;line-height:1.4!important;letter-spacing:-.8px;margin-top:10px!important;color:#803e35}
-.deadline-alert-top p{font-size:14px;color:#8a655d;margin-top:9px}
+.deadline-alert-label{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:#d11919;letter-spacing:1px}
+.deadline-alert-dot{display:inline-block;width:10px;height:10px;flex-shrink:0;border-radius:50%;background:#e02020;animation:deadline-dot-pulse 2.4s ease-in-out infinite}
+.deadline-alert h2{font-size:27px!important;line-height:1.4!important;letter-spacing:-.8px;margin-top:10px!important;color:#bc1414}
+.deadline-alert-top p{font-size:14px;color:#9b302b;margin-top:9px}
 .deadline-alert-close{display:grid;place-items:center;min-width:44px;min-height:44px;border:1px solid #e7ccc4;background:#fff;border-radius:7px;font-size:25px;color:#8f655c;flex-shrink:0}
 .deadline-alert-body{padding:22px 27px 25px}
 .deadline-alert-list{padding:0;margin:0;list-style:none;display:grid;gap:12px}
-.deadline-alert-item{padding:16px 18px;border:1px solid #e5d4ce;border-left:4px solid #ce6a5d;border-radius:8px;background:#fffdfc}
+.deadline-alert-item{padding:16px 18px;border:1px solid #e5d4ce;border-left:4px solid #e02020;border-radius:8px;background:#fffdfc}
 .deadline-alert-item-top{display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:11px;color:#7c786e}
-.deadline-alert-due{background:#fff0e9;color:#ae4736;border:1px solid #f0cfc3;padding:3px 9px;border-radius:5px;font-weight:700;white-space:nowrap}
+.deadline-alert-due{background:#e02020;color:#ffffff;border:1px solid #d01a1a;padding:3px 9px;border-radius:5px;font-weight:700;white-space:nowrap}
 .deadline-alert-item h3{font-size:18px!important;line-height:1.5!important;font-weight:700;margin:10px 0 5px!important;overflow-wrap:anywhere;color:#263f4e}
 .deadline-alert-item p{font-size:13px;color:#647985;line-height:1.8;overflow-wrap:anywhere}
 .deadline-alert-note{font-size:12px;color:#647985;margin-top:17px!important;line-height:1.8}
@@ -18,7 +18,7 @@
 .deadline-alert-actions a,.deadline-alert-actions button{min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:7px;font-size:14px;font-weight:650;padding:11px 12px;text-decoration:none}
 .deadline-alert-actions a{background:#247b99;color:white;border:1px solid #247b99}
 .deadline-alert-actions button{background:white;color:#4d6f7e;border:1px solid #c5d8e2}
-@keyframes deadline-border-pulse{0%,100%{border-color:#d68b7d;box-shadow:0 0 0 4px rgba(204,89,75,.06)}50%{border-color:#bc5043;box-shadow:0 0 0 9px rgba(204,89,75,.14)}}
+@keyframes deadline-border-pulse{0%,100%{border-color:#ff5454;box-shadow:0 0 0 4px rgba(224,32,32,.1)}50%{border-color:#d31818;box-shadow:0 0 0 9px rgba(224,32,32,.23)}}
 @keyframes deadline-dot-pulse{0%,100%{opacity:.45}50%{opacity:1}}
 @media(max-width:600px){.deadline-alert-top{padding:22px 20px 18px}.deadline-alert h2{font-size:24px!important}.deadline-alert-top p{font-size:13px}.deadline-alert-body{padding:19px 20px 22px}.deadline-alert-item{padding:14px}.deadline-alert-item h3{font-size:17px!important}.deadline-alert-actions{grid-template-columns:1fr}.deadline-alert-actions a{grid-row:1}}
 @media(prefers-reduced-motion:reduce){.deadline-alert,.deadline-alert-dot{animation:none!important}.deadline-alert-dot{opacity:1}}
