@@ -26,6 +26,6 @@
   return '';
  }
  const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- function summary(items,base=today()){return {total:items.length,active:items.filter(x=>x.stage!=='completed').length,completed:items.filter(x=>x.stage==='completed').length,overdue:items.filter(x=>x.stage!=='completed'&&indicator(x,base).kind==='overdue').length,urgent:items.filter(x=>x.stage!=='completed'&&['urgent','soon'].includes(indicator(x,base).kind)).length};}
+ function summary(items,base=today()){return {total:items.length,active:items.filter(x=>x.stage!=='completed').length,completed:items.filter(x=>x.stage==='completed').length,overdue:items.filter(x=>x.stage!=='completed'&&indicator(x,base).kind==='overdue').length,dueTomorrow:items.filter(x=>x.stage!=='completed'&&days(base,x.end)===1).length,dueToday:items.filter(x=>x.stage!=='completed'&&days(base,x.end)===0).length,dueInTwoDays:items.filter(x=>x.stage!=='completed'&&days(base,x.end)===2).length,urgent:items.filter(x=>x.stage!=='completed'&&['urgent','soon'].includes(indicator(x,base).kind)).length};}
  return {stages,categories,today,dateNumber,days,indicator,validate,summary,escape};
 });

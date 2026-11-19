@@ -1,7 +1,7 @@
 'use strict';
 // Bump this version whenever a release changes the offline app shell.
 const CACHE_PREFIX = 'highnoon-ict-';
-const CACHE_NAME = CACHE_PREFIX + '20261119-pwa-v11';
+const CACHE_NAME = CACHE_PREFIX + '20261119-pwa-v12';
 const ROOT = new URL('./', self.location.href);
 const INDEX = new URL('index.html', ROOT).href;
 const PAGE_URLS = new Set([INDEX, new URL('ethics.html', ROOT).href, new URL('incident.html', ROOT).href, new URL('construction.html', ROOT).href]);
@@ -44,10 +44,18 @@ self.addEventListener('fetch', event => {
     return;
   }
   // Cache only the declared shell, never unrelated files on this origin.
-  if (!SHELL.includes(url.href)) return;
+  const assetURL = new URL(url.pathname, ROOT.origin).href;
+  if (!SHELL.includes(assetURL)) return;
   event.respondWith((async () => {
     const cache = await caches.open(CACHE_NAME);
-    const cached = await cache.match(request);
+    const cached = await cache.match(assetURL);
+    if (/\.(?:js|css)$/.test(url.pathname)) {
+      try {
+        const response = await fetch(new Request(request, {cache: 'no-cache'}));
+        if (response.ok) { await cache.put(assetURL, response.clone()); return response; }
+        return cached || response;
+      } catch (error) { return cached || Response.error(); }
+    }
     return cached || fetch(request);
   })());
 });
