@@ -1,11 +1,11 @@
 'use strict';
 // Bump this version whenever a release changes the offline app shell.
 const CACHE_PREFIX = 'highnoon-ict-';
-const CACHE_NAME = CACHE_PREFIX + '20261119-pwa-v23';
+const CACHE_NAME = CACHE_PREFIX + '20261119-pwa-v24';
 const ROOT = new URL('./', self.location.href);
 const INDEX = new URL('index.html', ROOT).href;
-const PAGE_URLS = new Set([new URL('construction-hub.html', ROOT).href, INDEX, new URL('ethics.html', ROOT).href, new URL('incident.html', ROOT).href, new URL('construction.html', ROOT).href]);
-const SHELL = ['construction-hub.html', 'construction-hub.js', 'construction-hub.css', 'vendor/xlsx-0.20.3.full.min.js', 'construction-excel.js', 'construction-excel-ui.js', 'brand.css', 'assets/highnoon-mark.svg', 'construction-initial.js', 'deadline-alert.css', 'deadline-alert.js', 'construction.html', 'construction.css', 'construction.js', 'construction-core.js', 'construction-store.js', 'incident.html', 'incident.css', 'incident.js', 'index.html', 'ethics.html', 'ethics.css', 'ethics.js', 'assets/ethics-report-template.txt', 'manifest.webmanifest', 'app.js', 'app.css',
+const PAGE_URLS = new Set([new URL('construction-drawings.html', ROOT).href, new URL('construction-hub.html', ROOT).href, INDEX, new URL('ethics.html', ROOT).href, new URL('incident.html', ROOT).href, new URL('construction.html', ROOT).href]);
+const SHELL = ['construction-drawings.html', 'construction-hub.html', 'construction-hub.js', 'construction-hub.css', 'vendor/xlsx-0.20.3.full.min.js', 'construction-excel.js', 'construction-excel-ui.js', 'brand.css', 'assets/highnoon-mark.svg', 'construction-initial.js', 'deadline-alert.css', 'deadline-alert.js', 'construction.html', 'construction.css', 'construction.js', 'construction-core.js', 'construction-store.js', 'incident.html', 'incident.css', 'incident.js', 'index.html', 'ethics.html', 'ethics.css', 'ethics.js', 'assets/ethics-report-template.txt', 'manifest.webmanifest', 'app.js', 'app.css',
   'assets/app-icon-192.png', 'assets/app-icon-512.png', 'assets/apple-touch-icon.png',
   'assets/telecom-tower-sunset.png', 'assets/network-maintenance.jpg',
   'assets/field-safety-meeting.png'].map(path => new URL(path, ROOT).href);

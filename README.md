@@ -130,6 +130,6 @@ construction-core.js는 날짜·표시 판정, construction-store.js는 list/ups
 
 ## 공사종합관리 · PDF 도면
 
-- `construction-hub.html`에서 공사별 PDF 도면을 첨부·열람·다운로드·삭제할 수 있습니다.
+- `construction-drawings.html`에서 공사별 PDF 도면을 첨부·열람·다운로드·삭제할 수 있습니다.
 - 파일당 20MB, PDF 형식 확인 후 IndexedDB에 저장합니다. 동일 공사의 같은 파일명은 확인 후 교체합니다.
 - 도면은 현재 브라우저에만 저장되며 서버나 GitHub로 전송하지 않습니다. JSON 공사 백업에는 PDF가 포함되지 않습니다. 원본을 별도로 보관하세요.
