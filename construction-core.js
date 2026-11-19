@@ -1,7 +1,7 @@
 (function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.ConstructionCore=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
  'use strict';
  const stages={ordered:'작업지시',postponed:'연기(임시)',in_progress:'진행',completed:'완료'};
- const categories=['초고속','전용','무선','기타'];
+ const categories=['초고속','광','전용','무선','기타'];
  function today(){return new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());}
  function dateNumber(text){if(!/^\d{4}-\d{2}-\d{2}$/.test(text||''))return NaN;const time=Date.parse(text+'T00:00:00Z');return Number.isFinite(time)&&new Date(time).toISOString().slice(0,10)===text?time:NaN;}
  function days(from,to){return Math.round((dateNumber(to)-dateNumber(from))/86400000);}
